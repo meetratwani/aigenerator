@@ -1,0 +1,96 @@
+# 🎨 Drawing Studio - SIMPLE STARTUP GUIDE
+
+## The Problem: "Unable to POST"
+
+When you try to submit a drawing, it doesn't work.
+
+## The Solution: 3 Simple Steps
+
+### Step 1: Open PowerShell
+```
+Location: C:\Users\Meet\OneDrive\Desktop\ArpitSir
+```
+
+### Step 2: Start the Server
+```powershell
+python server.py
+```
+
+### Step 3: Wait for This Message
+```
+🚀 Starting Flask API Server on http://localhost:5000
+```
+
+**⏳ IMPORTANT:** This may take 10-15 minutes on first run!
+
+---
+
+## After Server Starts
+
+1. **DO NOT CLOSE** the PowerShell window
+2. Open **drawing_app.html** in your browser
+3. Draw something
+4. Click **"Submit Drawing"**
+5. Get your prediction! ✨
+
+---
+
+## Common Issues
+
+### "I don't see the startup message"
+- The server is still training (first run = 10-15 minutes)
+- Keep waiting and watch the terminal
+
+### "Error or connection refused"
+- Make sure you're in the right folder
+- Try: `cd C:\Users\Meet\OneDrive\Desktop\ArpitSir`
+- Then: `python server.py`
+
+### "ModuleNotFoundError: No module named 'flask'"
+- Install dependencies: `pip install -r requirements.txt`
+- Then try again: `python server.py`
+
+### "Port already in use"
+- Another app is using port 5000
+- Close other Python windows or change port
+- Try: `python server.py` again
+
+---
+
+## The Key: Keep Server Running! 🔑
+
+```
+Terminal 1 (Keep Open)          Terminal 2 / Browser
+┌─────────────────────┐        ┌──────────────────┐
+│ python server.py    │        │ Open              │
+│ (Running...)        │        │ drawing_app.html  │
+│                     │        │                  │
+│ DO NOT CLOSE!       │   -->  │ Draw & Submit    │
+└─────────────────────┘        └──────────────────┘
+```
+
+---
+
+## Quick Test
+
+Check if server is working:
+```
+Open browser: http://localhost:5000/api/health
+```
+
+Should show: `{"status":"Server is running", ...}`
+
+If yes ✅ → Server is working, open drawing_app.html
+If no ❌ → Server is not running, check PowerShell window
+
+---
+
+## Still Not Working?
+
+1. Read: **TROUBLESHOOTING.html** (open in browser)
+2. Read: **FETCH_TROUBLESHOOTING.md**
+3. Run: `python test_connection.ps1`
+
+---
+
+**That's it! The server must be running to use the drawing app.** 🚀
